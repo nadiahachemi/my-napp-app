@@ -1,0 +1,21 @@
+<span *ngIf="myUserServ.currentUser">
+  <h1>Here are your curls info {{myUserServ.currentUser.name}}</h1>
+
+<form (ngSubmit)="HairSubmission">
+
+  <label> <h2>Your Hair Type</h2>
+<input placeholder="{{myUserServ.currentUser.hairType}}" [(ngModel)]="hairForm.hairType" name="hairType" type="text" value="hairType" />
+</label>
+<label> <h2>Your Hair Length</h2> 
+<input placeholder="{{myUserServ.currentUser.hairLength}}" [(ngModel)]="hairForm.hairLength" name="hairLength" type="number" value="hairLength"/>
+</label>
+<label> <h2>Your Hair Volume</h2>
+<input  placeholder="{{myUserServ.currentUser.hairVolume}}" [(ngModel)]="hairForm.hairVolume" name="hairVolume" type="text" value="hairVolume"/>
+</label>
+<label> <h2>Your Hair Moisture</h2>
+<input placeholder="{{myUserServ.currentUser.hairMoisture}}" [(ngModel)]="hairForm.hairMoisture" name="hairMoisture" type="text" value="hairMoisture" />
+</label>
+
+<button (click)="hairInfoSubmit()">Save</button>
+</form>
+</span>

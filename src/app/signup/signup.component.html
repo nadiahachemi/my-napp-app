@@ -1,0 +1,25 @@
+<h2>Sign Up</h2>
+
+<form (ngSubmit)="signupSubmit()" >
+
+  <label>
+    First Name:
+    <input [(ngModel)]="signupForm.name" name="name" type="text" placeholder="Rick">
+  </label>
+  <br />
+
+  <label>
+    Email:
+    <input [(ngModel)]="signupForm.email" name="email" type="text" placeholder="Pickle">
+  </label>
+  <br />
+
+  <label>
+    Password:
+    <input [(ngModel)]="signupForm.originalPassword" name="originalPassword" type="text" placeholder="shhhhhh!">
+  </label>
+  <br />
+
+  <button>Submit</button>
+
+</form>
