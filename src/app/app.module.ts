@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FileSelectDirective} from 'ng2-file-upload';
+import { FileUploadModule} from 'ng2-file-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,15 +23,15 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     CurlsInfosComponent,
     WishListComponent,
-    NappyRoutineComponent,
-    FileSelectDirective,
+    NappyRoutineComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]
