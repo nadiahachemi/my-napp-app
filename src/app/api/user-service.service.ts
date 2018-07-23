@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';//
-//import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import{environment} from "../../environments/environment";
 
-const backendUrl = "http://localhost:3000";
+const {backendUrl}= environment;
+
 @Injectable({
   providedIn: 'root'
 })
