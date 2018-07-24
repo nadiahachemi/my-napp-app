@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import{environment} from "../../environments/environment";
+import { post } from '../../../node_modules/@types/selenium-webdriver/http';
 
 const {backendUrl}= environment;
 
@@ -8,6 +9,7 @@ const {backendUrl}= environment;
   providedIn: 'root'
 })
 export class UserServiceService {
+  routines: Routine [];
   currentUser: User;
   products: Product[];
 
@@ -82,14 +84,91 @@ getWishList(){
    .get(`${backendUrl}/api/wish-list/search`, {withCredentials: true})
    .toPromise()
    .then((response:Product[])=>{
-     console.log("RESPONSE ---------", response);
     this.products = response;
     return response;
 
    })
  };
+
+ getRoutines(){
+   return this.myHttpServ
+   .get(`${backendUrl}/api/routines`, {withCredentials: true})
+   .toPromise()
+   .then((response: Routine[])=>{
+     console.log("RESPONSE ---------", response);
+     this.routines = response;
+     return response;
+   })
+ }
+
+ getUserRoutines(){
+   return this.myHttpServ
+  .get(`${backendUrl}/api/user-routines`,  {withCredentials: true})
+  .toPromise()
+ .then((response: any)=>{
+   this.currentUser = response;
+   return response;
+ });
+
+ }
+
+ addProductToWishList(oneProduct){
+   return this.myHttpServ
+   .post(`${backendUrl}/api/wish-list/add`, {oneProduct}, { withCredentials: true })
+   .toPromise()
+   .then((response: any)=>{
+     this.currentUser = response;
+     return response;
+   })
+ }
+
+ deleteProduct(oneWish){
+   return this.myHttpServ
+   .post(`${backendUrl}/api/wish-list/pull`, {oneWish}, {withCredentials: true})
+  .toPromise()
+  .then((response: any)=>{
+    this.currentUser = response;
+    return response;
+  })
+  }
+
+ addRoutineToRoutineList(oneRoutine){
+  return this.myHttpServ
+  .post(`${backendUrl}/api/routines/add`, {oneRoutine}, { withCredentials: true })
+  .toPromise()
+  .then((response: any)=>{
+    this.currentUser = response;
+    return response;
+  })
+ }
+
+ deleteRoutine(oneRoutine){
+  return this.myHttpServ
+  .post(`${backendUrl}/api/routines/pull`, {oneRoutine}, {withCredentials: true})
+ .toPromise()
+ .then((response: any)=>{
+   this.currentUser = response;
+   return response;
+ })
+ }
+
+myFunction() {
+  var x = document.getElementById("infos");
+  if (x.style.display === "none") {
+      x.style.display = "block";
+  } else {
+      x.style.display = "none";
+  }
 }
 
+}
+export class Routine{
+  _id: string;
+  name:string;
+  description: string;
+  pictureUrl: string;
+  video: string;
+}
 export class User {
   _id: string;
   name: string;

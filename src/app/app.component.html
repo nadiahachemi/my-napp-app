@@ -8,17 +8,24 @@
 
 <span *ngIf="myUserServ.currentUser">
   <b>Welcome back, {{myUserServ.currentUser.name}}!</b>
-  <br/>
-  <button (click)="logoutClick()">Log Out</button>
-  <br/>
+  <br />
 
-  <img [src]="myUserServ.currentUser.photo" width="300px">
-  <br>
-  <a routerLink="curls-infos">  My Culrs Infos  </a>
-  <br>
-  <a routerLink="wish-list">  My Nappy Wish List  </a>
-  <br>
-  <a routerLink="nappy-routine">  My Nappy Routine Schedule  </a>
+  <img [src]="myUserServ.currentUser.pictureUrl" width="300px">
+  <br />
+  
+  <button (click)="logoutClick()">Log Out</button>
+  <br />
+
+  <nav>
+    <a routerLink="curls-infos">  My Culrs Infos  </a>
+  </nav>
+  
+  <nav>
+    <a routerLink="wish-list">  My Nappy Wish List  </a>
+  </nav>
+  <nav>
+    <a routerLink="nappy-routine">  My Nappy Routine Schedule  </a>
+  </nav>
 </span>
 
 <router-outlet></router-outlet>

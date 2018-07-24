@@ -22,6 +22,22 @@ export class WishListComponent implements OnInit {
     })
     this.getWishList();
     this.getProducts();
+    //this.addProductToWishList();
+  }
+
+  addProductToWishList(oneProduct) {
+    this.myUserServ.addProductToWishList(oneProduct)
+    .catch((err)=>{
+      alert ("couldn't add this product to your wishList sorry");
+      console.log(err);
+    })
+  };
+  deleteProduct(oneWish){
+    this.myUserServ.deleteProduct(oneWish)
+    .catch((err)=>{
+      alert("couldn't take this out of your list");
+      console.log(err);
+    })
   }
   getWishList(){
     this.myUserServ.getWishList()
