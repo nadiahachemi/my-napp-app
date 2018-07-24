@@ -178,7 +178,8 @@ export class User {
   hairLength:number;
   hairVolume:string;
   hairMoisture:string;
-  wishList: [string];
+  wishList: any[];
+  routines: any[];
   createdAt: Date;
   updatedAt: Date;
 }
