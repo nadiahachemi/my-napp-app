@@ -1,24 +1,25 @@
 
 <br/>
-<h1>Here is your wish list {{myUserServ.currentUser.name}}</h1>
-
-<div  *ngFor ="let oneWish of myUserServ.currentUser.wishList">
-    <img width="200px" [src]="oneWish.pictureUrl" />
+<h1 class= "title">HERE IS YOUR WISHLIST {{myUserServ.currentUser.name}}</h1>
+<div class= "main-content">
+<div class= "product" *ngFor ="let oneWish of myUserServ.currentUser.wishList">
+    <button value="oneWish" (click)="deleteProduct(oneWish)" > DELETE FROM WISHLIST </button>
+    <img [src]="oneWish.pictureUrl" />
     <h2>{{oneWish.brand}}</h2>
     <p>{{oneWish.description}}</p>
-    <button value="oneWish" (click)="deleteProduct(oneWish)" > deLETE FROM WISHLIST </button>
+</div>
 </div>
 
-
-<h1>What are you looking for today?</h1>
+<h1 class= "title">WHAT ARE YOU LOOKING FOR TODAY?</h1>
 <input type="search" name="searchTerm" placeholder="Search..">
 <button>Search</button>
-<div   *ngFor="let oneProduct of products">
-<img width="200px" [src]="oneProduct.pictureUrl" />
+<div class= "main-content">
+    <div class="product" *ngFor="let oneProduct of products">
+            <button value="{{oneProduct}}" (click)="addProductToWishList(oneProduct)" >ADD TO MY WISH LIST</button>
+<img [src]="oneProduct.pictureUrl" />
 <h3>{{oneProduct.name}}</h3>
 <h3>{{oneProduct.brand}}</h3>
 <p>{{oneProduct.description}}</p>
-<button value="{{oneProduct}}" (click)="addProductToWishList(oneProduct)" >ADD TO MY WISH LIST</button>
 </div>
-  
+ </div> 
 

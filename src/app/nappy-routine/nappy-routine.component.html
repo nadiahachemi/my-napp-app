@@ -1,5 +1,5 @@
 
-<h1>Your Hair Routines {{myUserServ.currentUser.name}}</h1>
+<h1 class= "title">YOUR HAIR ROUTINES {{myUserServ.currentUser.name}}</h1>
 <div class="main-content">
   <div class="routines" *ngFor=" let oneRoutine of myUserServ.currentUser.routines">
     <img [src]="oneRoutine.pictureUrl" />
@@ -12,7 +12,7 @@
 
 
 
-  <h1>Wanna add an other routine to yours??</h1>
+  <h1 class= "title" >NEED MORE ROUTINES?</h1>
 <div class="main-content">
   <div class="routines" *ngFor=" let oneRoutine of routines">
     <img [src]="oneRoutine.pictureUrl" />
