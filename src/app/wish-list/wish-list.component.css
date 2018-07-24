@@ -16,7 +16,7 @@
     border-radius: 12px;
     background-color:rgba(207, 243, 252, 0.678);
     align-content: flex-start;
-    justify-content: space evenly;
+    justify-content: space-evenly;
     align-items: center;
     text-align: start;
     border: 2px solid lightblue;

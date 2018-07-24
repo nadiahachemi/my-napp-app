@@ -1,31 +1,30 @@
 <h1>NAPP APP</h1>
 
 <span *ngIf="!myUserServ.currentUser">
-<a routerLink="signup">  Sign Up  </a>
-<a routerLink="/login">  Log in  </a>
+ <button> <a routerLink="signup">  SIGN UP  </a>  </button>
+ <button> <a routerLink="/login">  LOG IN  </a> </button>
 </span>
 
 
 <span *ngIf="myUserServ.currentUser">
+  
+
+  <nav>
+   <button> <a routerLink="curls-infos">  MY CURLS INFOS  </a> </button>
+    
+    
+  <button>  <a routerLink="wish-list">  MY NAPPY WISH LIST </a> </button>
+    
+    
+   <button> <a routerLink="nappy-routine">  MY NAPPY ROUTINE  </a> </button>
+    
+    
+    <button (click)="logoutClick()">LOG OUT</button>
+  </nav>
+  
   <b>Welcome back, {{myUserServ.currentUser.name}}!</b>
-  <br />
+  <img [src]="myUserServ.currentUser.pictureUrl" width="150px">
 
-  <img [src]="myUserServ.currentUser.pictureUrl" width="300px">
-  <br />
-  
-  <button (click)="logoutClick()">Log Out</button>
-  <br />
-
-  <nav>
-    <a routerLink="curls-infos">  My Culrs Infos  </a>
-  </nav>
-  
-  <nav>
-    <a routerLink="wish-list">  My Nappy Wish List  </a>
-  </nav>
-  <nav>
-    <a routerLink="nappy-routine">  My Nappy Routine Schedule  </a>
-  </nav>
 </span>
 
 <router-outlet></router-outlet>
