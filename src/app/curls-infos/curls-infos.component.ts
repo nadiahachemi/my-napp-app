@@ -21,6 +21,9 @@ export class CurlsInfosComponent implements OnInit {
   }
   logoutClick(){
     this.myUserServ.logout()
+    .then(()=>{
+      this.myRouterServ.navigateByUrl("/");
+    })
     //res.render("/")
     .catch((err)=>{
       alert("Sorry there was a problem with your log out");

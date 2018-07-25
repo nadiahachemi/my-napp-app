@@ -1,4 +1,4 @@
-
+<span *ngIf="myUserServ.currentUser">
 <h1 class= "title">YOUR HAIR ROUTINES {{myUserServ.currentUser.name}}</h1>
 <div class="main-content">
   <div class="routines" *ngFor=" let oneRoutine of myUserServ.currentUser.routines">
@@ -22,7 +22,7 @@
     <button value="{{oneRoutine}}" (click)="addRoutineToRoutineList(oneRoutine)" >ADD TO MY ROUTINE LIST</button>
   </div>
 </div>
-
+</span>
 
 
     

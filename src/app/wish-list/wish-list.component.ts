@@ -48,7 +48,7 @@ export class WishListComponent implements OnInit {
   };
 
   getProducts(){
-    this.myUserServ.getProducts()
+    this.myUserServ.getProducts(this.searchTerm)
     .then(result=>{
       this.products= result;
     })
@@ -60,11 +60,14 @@ export class WishListComponent implements OnInit {
 
   logoutClick(){
     this.myUserServ.logout()
+    .then(()=>{
+      this.myRouterServ.navigateByUrl("/");
+    })
     //res.render("/")
     .catch((err)=>{
       alert("Sorry there was a problem with your log out");
       console.log(err);
     })
-  };
+  }
 
 }

@@ -1,5 +1,9 @@
+
+
+
 .main-content{
-    background-color:rgba(250, 240, 224, 0.795);
+    background-image: url(../../assets/images/marbre1.jpeg);
+    background-size: cover;
     border-radius: 12px;
     display: flex;
     flex-direction: row;
@@ -7,7 +11,7 @@
     flex-grow:2;
     margin: 70px;
     flex-wrap: wrap;
-    border: 2px solid burlywood;
+    border: 2px solid lightblue;
 }
 
 .product{
@@ -50,16 +54,18 @@ img{
 }
 
 button{
+    font-size: 15px;
     margin-bottom: 30px;
-    background-color:rgba(243, 210, 156, 0.795);
+    background-color: lightblue;
     width: 100 px;
     min-height: 40px;
     border-radius: 12px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 .title{
     text-align: center;
-    color: rgb(223, 172, 35)
+    color: lightblue;
 }
 p{
     font-size: 10px;

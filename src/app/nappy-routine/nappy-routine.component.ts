@@ -19,6 +19,7 @@ export class NappyRoutineComponent implements OnInit {
       console.log(err);
     })
     this.getRoutines();
+    
     this.getUserRoutines();
 
   }
@@ -58,17 +59,24 @@ export class NappyRoutineComponent implements OnInit {
       alert("couldn't pull this from your routines");
       console.log(err);
     })
+    this.myUserServ.getUserRoutines()
+    .catch((err)=>{
+      alert ("couldn't get your routines");
+      console.log(err);
+    })
   }
 
-  
 
   logoutClick(){
     this.myUserServ.logout()
+    .then(()=>{
+      this.myRouterServ.navigateByUrl("/");
+    })
     //res.render("/")
     .catch((err)=>{
       alert("Sorry there was a problem with your log out");
       console.log(err);
     })
-  };
+  }
 
   }

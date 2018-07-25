@@ -1,8 +1,7 @@
-
-<br/>
-<h1 class= "title">HERE IS YOUR WISHLIST {{myUserServ.currentUser.name}}</h1>
+<span *ngIf="myUserServ.currentUser">
+<h1 class= "title">HERE IS YOUR WISHLIST {{myUserServ.currentUser?.name}}</h1>
 <div class= "main-content">
-<div class= "product" *ngFor ="let oneWish of myUserServ.currentUser.wishList">
+<div class= "product" *ngFor ="let oneWish of myUserServ.currentUser?.wishList">
     <button value="oneWish" (click)="deleteProduct(oneWish)" > DELETE FROM WISHLIST </button>
     <img [src]="oneWish.pictureUrl" />
     <h2>{{oneWish.brand}}</h2>
@@ -11,8 +10,21 @@
 </div>
 
 <h1 class= "title">WHAT ARE YOU LOOKING FOR TODAY?</h1>
-<input type="search" name="searchTerm" placeholder="Search..">
-<button>Search</button>
+
+<select [(ngModel)]="searchTerm.searchTerm" name="searchTerm">
+    <option value="">Search...</option>
+    <option value="shampoo">Shampoo</option>
+    <option value="conditioner">conditioner</option>
+    <option value="oil">Oil</option>
+    <option value="masque">Masque</option>
+    <option value="gel">Gel</option>
+    <option value="hair spray">Hair Spray</option>
+    <option value="scalp treatment">Scalp treatment</option>
+    <option value="mousse">Mousse</option>
+</select>
+<button (click)="getProducts()">Search</button>
+
+
 <div class= "main-content">
     <div class="product" *ngFor="let oneProduct of products">
             <button value="{{oneProduct}}" (click)="addProductToWishList(oneProduct)" >ADD TO MY WISH LIST</button>
@@ -22,4 +34,4 @@
 <p>{{oneProduct.description}}</p>
 </div>
  </div> 
-
+ </span>

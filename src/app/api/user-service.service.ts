@@ -79,9 +79,9 @@ getWishList(){
   });
  }
 
- getProducts(){
+ getProducts(searchTerm: SearchTerm){
    return this.myHttpServ
-   .get(`${backendUrl}/api/wish-list/search`, {withCredentials: true})
+   .post(`${backendUrl}/api/wish-list/search`, searchTerm, {withCredentials: true})
    .toPromise()
    .then((response:Product[])=>{
     this.products = response;
