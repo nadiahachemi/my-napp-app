@@ -1,38 +1,6 @@
 
-form{
-    margin: auto;
-    background-image: url(../../assets/images/marbre1.jpeg);
-    background-size: cover;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: row;
-    width: 1200px;
-    margin: 70px;
-    flex-wrap: wrap;
-    border: 2px solid lightblue;
-}
 
-label{
-    
- display: flex;
-flex-direction: row;
-border-radius: 12px;
-background-color:rgba(207, 243, 252, 0.678);
-align-content: flex-start;
-justify-content: space evenly;
-align-items: center;
-text-align: start;
-border: 2px solid lightblue;
-margin: 50px;
-padding-top: 30px;
-padding-bottom: 30px;
-padding-left: 30px;
-padding-right: 30px;
-height: 80px;
-width: 1000px;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
+/* 
 
 input{
     margin-left: 20px;
@@ -63,4 +31,4 @@ button{
     border-radius: 12px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+ */

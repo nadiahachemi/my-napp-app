@@ -1,5 +1,189 @@
 body{
-
 background-image: url(./assets/images/white-waves.jpeg);
 background-size: cover;
+}
+
+header{
+    background-image: url("/assets/images/marbre1.jpeg");
+    background-size: cover;
+    border-radius: 12px;
+    padding-bottom: 5%x;
+    padding-top:2px;
+    margin-bottom: 5%;
+    border: 2px solid lightblue;
+}
+
+span{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-repeat: repeat;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+
+}
+
+.main-content{
+    background-image: url(./assets/images/marbre1.jpeg);
+    background-size: cover;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-grow:3;
+    margin: auto;
+    width:92%;
+    flex-wrap: wrap;
+    border: 2px solid lightblue;
+
+}
+.profile{
+    width: 10%;
+}
+
+img{
+    border: 2px solid whitesmoke;
+    border-radius: 12px;
+    height: 40%; 
+    width:50%;
+}
+
+.routines{
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color:rgba(207, 243, 252, 0.678);
+    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: start;
+    border: 2px solid lightblue;
+    margin: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 400px;
+    width: 400px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+}
+
+.product{
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color:rgba(207, 243, 252, 0.678);
+    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: start;
+    border: 2px solid lightblue;
+    margin: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 400px;
+    width: 400px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+form{
+    margin: 5%;
+    background-image: url(./assets/images/marbre1.jpeg);
+    background-size: cover;
+    border-radius: 12px;
+    display: flex;
+    flex-grow:3;
+    flex-direction: row;
+    justify-content: center;
+    padding: auto;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    border: 2px solid lightblue;
+}
+
+select{
+    margin-left: 20px;
+    height: 10%;
+    width: 200%;
+    font-size: 20px;
+}
+
+input{
+    margin-left: 20px;
+    height: 10%;
+    width: 200%;
+    font-size: 20px;
+}
+
+
+label{
+    display: flex;
+   flex-direction: row;
+   border-radius: 12px;
+   background-color:rgba(207, 243, 252, 0.678);
+   align-content: flex-start;
+   justify-content: space evenly;
+   align-items: center;
+   text-align: start;
+   border: 2px solid lightblue;
+   margin: 5%;
+   height: 5%;
+   width: 60%;
+   font-size: 70%;
+   padding: 3%;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   }
+   
+
+
+button{
+    font-size: 15px;
+    margin-bottom: 30px;
+    background-color: whitesmoke;
+    width: 100 px;
+    min-height: 40px;
+    border-radius: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: lightblue;
+    font-size: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+h3{
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.title{
+    text-align: center;
+    color: lightblue;
+}
+p{
+    font-size: 10px;
+    max-block-size: 20px;
+} 
+
+a{
+    color: black;
+    text-decoration: transparent;
+    font-size: 15px;
+}
+
+select{
+    width:60%;
 }
