@@ -95,7 +95,6 @@ getWishList(){
    .get(`${backendUrl}/api/routines`, {withCredentials: true})
    .toPromise()
    .then((response: Routine[])=>{
-     console.log("RESPONSE ---------", response);
      this.routines = response;
      return response;
    })
@@ -152,13 +151,14 @@ getWishList(){
  })
  }
 
-myFunction() {
-  var x = document.getElementById("infos");
-  if (x.style.display === "none") {
-      x.style.display = "block";
-  } else {
-      x.style.display = "none";
-  }
+routineWhen(oneRoutine: Routine, whenForm: whenForm){
+  return this.myHttpServ
+  .post(`${backendUrl}/api/nappy-routine/when`, {whenForm, oneRoutine}, {withCredentials: true})
+  .toPromise()
+  .then((response: any)=>{
+    this.currentUser = response;
+    return response;
+  })
 }
 
 }
@@ -209,8 +209,19 @@ export class LoginSubmission {
    hairLength: number;
    hairVolume: string;
    hairMoisture: string;
+
+   constructor(initialInfo: any = {}) {
+      this.hairType = initialInfo.hairType;
+      this.hairLength = initialInfo.hairLength;
+      this.hairVolume = initialInfo.hairVolume;
+      this.hairMoisture = initialInfo.hairMoisture;
+   }
  }
 
  export class SearchTerm{
    searchTerm: string;
+ }
+
+ export class whenForm{
+   when: string;
  }

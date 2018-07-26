@@ -1,23 +1,40 @@
 <span *ngIf="myUserServ.currentUser">
 <h1 class= "title">YOUR HAIR ROUTINES {{myUserServ.currentUser.name}}</h1>
 <div class="main-content">
-  <div class="routines" *ngFor=" let oneRoutine of myUserServ.currentUser.routines">
-    <img [src]="oneRoutine.pictureUrl" />
-    <h3>{{oneRoutine.name}}</h3>
-    <!-- <p>{{oneRoutine.description}}</p>
-      <a [href]="oneRoutine.video">see tutorial</a>  -->
-      <button value="{{oneRoutine}}" (click)="deleteRoutine(oneRoutine)">Delete from my routines </button>
-    </div>
+  <div class="routines" *ngFor=" let oneRoutine of myUserServ.currentUser.routines, let i = index">
+    <button (click)="deleteRoutine(oneRoutine)">Delete from my routines </button>
+    <img [src]="oneRoutine.info.pictureUrl" />
+    <h3 class="routine-name">{{oneRoutine.info.name}}</h3>
+    <h3 class="routine-when">{{oneRoutine.when}}</h3>
+    <a [href]="oneRoutine.info.video">see tutorial</a>
+    <form class="schedule-form"(ngSubmit)="routineWhen(oneRoutine, whenForm[i])" >
+        <select class="schedule" *ngIf="!select" value="{{oneRoutine.when}}" [(ngModel)]="whenForm[i]" name="when"> 
+         <option value="Monday">Monday</option>
+         <option value="Tuesday">Tuesday</option>
+         <option value="Wendnsay">Wendnsay</option>
+         <option value="Thursay">Thursay</option>
+         <option value="Friday">Friday</option>
+         <option value="Saturday">Saturday</option>
+         <option value="Sunday">Sunday</option>
+       </select>
+       
+       <button class="schedule-button" >schedule this routine</button>
+      </form>
   </div>
+</div>
 
 
 
-  <h1 class= "title" >NEED MORE ROUTINES?</h1>
+<h1 class= "title" >NEED MORE ROUTINES?</h1>
 <div class="main-content">
   <div class="routines" *ngFor=" let oneRoutine of routines">
     <img [src]="oneRoutine.pictureUrl" />
     <h3>{{oneRoutine.name}}</h3>
     <a [href]="oneRoutine.video">see tutorial</a>
+    
+        
+
+  
     <!-- <p>{{oneRoutine.description}}</p> -->
     <button value="{{oneRoutine}}" (click)="addRoutineToRoutineList(oneRoutine)" >ADD TO MY ROUTINE LIST</button>
   </div>

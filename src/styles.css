@@ -124,6 +124,12 @@ input{
     height: 10%;
     width: 200%;
     font-size: 20px;
+    background-image: url("./assets/images/marbre1.jpeg");
+}
+
+option{
+    background-blend-mode: luminosity;
+
 }
 
 
@@ -146,11 +152,10 @@ label{
    }
    
 
-
 button{
     font-size: 15px;
     margin-bottom: 30px;
-    background-color: whitesmoke;
+    background-image: url("./assets/images/marbre1.jpeg");
     width: 100 px;
     min-height: 40px;
     border-radius: 12px;
@@ -187,3 +192,22 @@ a{
 select{
     width:60%;
 }
+
+.schedule{
+    margin: auto;
+    visibility: visible;
+    background-image: url("./assets/images/marbre1.jpeg");
+}
+
+.schedule-button{
+    margin: auto;
+    visibility: visible;
+    background-image: url("./assets/images/marbre1.jpeg");
+}
+
+.schedule-form{
+    display: flex;
+    align-items: center;
+    visibility: hidden; 
+}
+

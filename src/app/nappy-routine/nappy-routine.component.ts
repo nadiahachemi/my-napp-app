@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService, Routine } from '../api/user-service.service';
-import { Router } from '../../../node_modules/@angular/router';
+import { UserServiceService, Routine, whenForm } from '../api/user-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nappy-routine',
@@ -9,6 +9,7 @@ import { Router } from '../../../node_modules/@angular/router';
 })
 export class NappyRoutineComponent implements OnInit {
   routines: Routine[];
+  whenForm: string[]= [];
 
   constructor(public myUserServ: UserServiceService, public myRouterServ: Router) { }
 
@@ -19,7 +20,7 @@ export class NappyRoutineComponent implements OnInit {
       console.log(err);
     })
     this.getRoutines();
-    
+
     this.getUserRoutines();
 
   }
@@ -47,6 +48,12 @@ export class NappyRoutineComponent implements OnInit {
 
   getUserRoutines(){
     this.myUserServ.getUserRoutines()
+    .then(() => {
+      this.whenForm =
+        this.myUserServ.currentUser.routines.map((routine) => {
+          return routine.when;
+        });
+    })
     .catch((err)=>{
       alert ("couldn't get your routines");
       console.log(err);
@@ -54,7 +61,7 @@ export class NappyRoutineComponent implements OnInit {
   };
 
   deleteRoutine(oneRoutine){
-    this.myUserServ.deleteRoutine(oneRoutine)
+    this.myUserServ.deleteRoutine(oneRoutine.info)
     .catch((err)=>{
       alert("couldn't pull this from your routines");
       console.log(err);
@@ -66,7 +73,15 @@ export class NappyRoutineComponent implements OnInit {
     })
   }
 
-
+  routineWhen(oneRoutine, selection){
+    const choice = new whenForm();
+    choice.when = selection;
+    this.myUserServ.routineWhen(oneRoutine.info, choice)
+    .catch((err)=>{
+      alert("We couldn't do it sorry bby");
+      console.log(err);
+    })
+  }
   logoutClick(){
     this.myUserServ.logout()
     .then(()=>{

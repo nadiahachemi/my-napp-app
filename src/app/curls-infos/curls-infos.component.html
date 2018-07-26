@@ -4,7 +4,8 @@
 <form (ngSubmit)="HairSubmission">
 
   <label> <h2>YOUR HAIR TYPE: </h2>
-<select [(ngModel)]="hairForm.hairType" name="hairType"  value="hairType" >
+    <b>{{myUserServ.currentUser.hairType}}</b> 
+<select [(ngModel)]="hairForm.hairType" name="hairType"  value="hairType" placeholder="">
 <option value="1">1</option>
 <option value="2a">2a</option>
 <option value="2b">2b</option>
@@ -18,10 +19,13 @@
 </select>
 </label>
 <label> <h2>YOUR HAIR LENGTH: </h2> 
-<input placeholder="{{myUserServ.currentUser.hairLength}}" [(ngModel)]="hairForm.hairLength" name="hairLength" type="number" value="hairLength"/>cm
+  <b>{{myUserServ.currentUser.hairLength}}</b> 
+
+<input [(ngModel)]="hairForm.hairLength" name="hairLength" type="number" /> cm
 </label>
 <label> <h2>YOUR HAIR VOLUME: </h2>
-<select [(ngModel)]="hairForm.hairVolume" name="hairVolume" value="hairVolume">
+  <b>{{myUserServ.currentUser.hairVolume}}</b> 
+<select *ngIf="!input" value="{{myUserServ.currentUser.hairVolume}}"[(ngModel)]="hairForm.hairVolume" name="hairVolume" value="hairVolume" placeholder="" >
 <option value="extra thin">extra thin</option>
 <option value="thin">thin</option>
 <option value="normal">normal</option>
@@ -30,7 +34,8 @@
 </select>
 </label>
 <label> <h2>YOUR HAIR MOISTURE: </h2>
-<select [(ngModel)]="hairForm.hairMoisture" name="hairMoisture" type="text" value="hairMoisture" >
+  <b>{{myUserServ.currentUser.hairMoisture}}</b> 
+<select [(ngModel)]="hairForm.hairMoisture" name="hairMoisture" type="text" value="hairMoisture" placeholder="" >
 <option value="extra dry">extra dry</option>
 <option value="dry">dry</option>
 <option value="normal">normal</option>

@@ -14,6 +14,9 @@ export class CurlsInfosComponent implements OnInit {
 
   ngOnInit(){
     this.myUserServ.check()
+    .then(() => {
+      this.hairForm = new HairSubmission(this.myUserServ.currentUser);
+    })
     .catch((err)=>{
       alert("We are having blah blah blah");
       console.log(err);
@@ -44,6 +47,8 @@ export class CurlsInfosComponent implements OnInit {
     alert("Sorry! There was a problem with your hair update.");
     console.log(err);
   });
-  }}
+  }
+
+}
 
   
