@@ -62,17 +62,26 @@ export class NappyRoutineComponent implements OnInit {
 
   deleteRoutine(oneRoutine){
     this.myUserServ.deleteRoutine(oneRoutine.info)
+    .then(()=>{
+      this.myRouterServ.navigateByUrl("/nappy-routine")
+    })
     .catch((err)=>{
       alert("couldn't pull this from your routines");
       console.log(err);
     })
-    this.myUserServ.getUserRoutines()
+    // this.myUserServ.getUserRoutines()
+    // .then(() => {
+    //   this.whenForm =
+    //     this.myUserServ.currentUser.routines.map((routine) => {
+    //       return routine.when;
+    //     });
+    // })
     .catch((err)=>{
       alert ("couldn't get your routines");
       console.log(err);
     })
-  }
-
+  };
+  
   routineWhen(oneRoutine, selection){
     const choice = new whenForm();
     choice.when = selection;

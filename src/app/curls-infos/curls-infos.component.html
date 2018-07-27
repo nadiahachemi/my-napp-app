@@ -1,10 +1,10 @@
 <span *ngIf="myUserServ.currentUser">
-  <h1>HERE ARE YOUR CURLS INFOS {{myUserServ.currentUser.name}}</h1>
+  <h1>Here are your curls infos {{myUserServ.currentUser.name}}</h1>
 
 <form (ngSubmit)="HairSubmission">
 
-  <label> <h2>YOUR HAIR TYPE: </h2>
-    <b>{{myUserServ.currentUser.hairType}}</b> 
+  <label> <h2>Your hair type: </h2>
+  
 <select [(ngModel)]="hairForm.hairType" name="hairType"  value="hairType" placeholder="">
 <option value="1">1</option>
 <option value="2a">2a</option>
@@ -18,13 +18,14 @@
 <option value="4c">4c</option>
 </select>
 </label>
-<label> <h2>YOUR HAIR LENGTH: </h2> 
-  <b>{{myUserServ.currentUser.hairLength}}</b> 
+<label> <h2>Your hair length: </h2> 
+ 
 
-<input [(ngModel)]="hairForm.hairLength" name="hairLength" type="number" /> cm
+<input [(ngModel)]="hairForm.hairLength" name="hairLength" type="number" />
+<h2> cm</h2>
 </label>
-<label> <h2>YOUR HAIR VOLUME: </h2>
-  <b>{{myUserServ.currentUser.hairVolume}}</b> 
+<label> <h2>Your hair volume: </h2>
+   
 <select *ngIf="!input" value="{{myUserServ.currentUser.hairVolume}}"[(ngModel)]="hairForm.hairVolume" name="hairVolume" value="hairVolume" placeholder="" >
 <option value="extra thin">extra thin</option>
 <option value="thin">thin</option>
@@ -33,8 +34,8 @@
 <option value="extra thick">extra thick</option>
 </select>
 </label>
-<label> <h2>YOUR HAIR MOISTURE: </h2>
-  <b>{{myUserServ.currentUser.hairMoisture}}</b> 
+<label> <h2>Your hair moisture: </h2>
+ 
 <select [(ngModel)]="hairForm.hairMoisture" name="hairMoisture" type="text" value="hairMoisture" placeholder="" >
 <option value="extra dry">extra dry</option>
 <option value="dry">dry</option>
