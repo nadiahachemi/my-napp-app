@@ -7,6 +7,7 @@ import { CurlsInfosComponent } from './curls-infos/curls-infos.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { NappyRoutineComponent } from './nappy-routine/nappy-routine.component';
 import { SignupComponent } from './signup/signup.component';
+import { ChartComponent } from './chart/chart.component';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:"curls-infos", component: CurlsInfosComponent},
   {path:"wish-list", component: WishListComponent},
   {path: "nappy-routine", component: NappyRoutineComponent},
+  {path: "chart", component: ChartComponent},
   { path: "**", component: NotFoundPageComponent },
 ]
 

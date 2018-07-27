@@ -1,15 +1,18 @@
 body{
-background-image: url(./assets/images/white-waves.jpeg);
-background-size: cover;
+background-image: url(./assets/images/marbre1.jpeg);
+background-size: repeat;
 }
 
 header{
-    background-image: url("/assets/images/marbre1.jpeg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
     background-size: cover;
     border-radius: 12px;
     padding-bottom: 5%x;
     padding-top:2px;
-    margin-bottom: 5%;
+    margin: 5%;
     border: 2px solid lightblue;
 }
 
@@ -32,7 +35,7 @@ nav{
 }
 
 .main-content{
-    background-image: url(./assets/images/marbre1.jpeg);
+    background-color: white;
     background-size: cover;
     border-radius: 12px;
     display: flex;
@@ -45,9 +48,7 @@ nav{
     border: 2px solid lightblue;
 
 }
-.profile{
-    width: 10%;
-}
+
 
 img{
     border: 2px solid whitesmoke;
@@ -71,7 +72,6 @@ img{
     padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 30px;
-    height: 400px;
     width: 400px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
 }
@@ -91,15 +91,13 @@ img{
     padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 30px;
-    height: 400px;
     width: 400px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 }
 form{
     margin: 5%;
-    background-image: url(./assets/images/marbre1.jpeg);
-    background-size: cover;
+    background-color: white;
     border-radius: 12px;
     display: flex;
     flex-grow:3;
@@ -110,8 +108,13 @@ form{
     margin: auto;
     flex-wrap: wrap;
     border: 2px solid lightblue;
+    padding-bottom: 5%;
 }
-
+.login-signup{
+    border: 2px solid lightblue;
+    margin: auto;
+    width: 40%;
+}
 select{
     margin-left: 20px;
     height: 10%;
@@ -154,19 +157,26 @@ label{
 
 button{
     font-size: 15px;
-    margin-bottom: 30px;
+    margin: 4%;
     background-image: url("./assets/images/marbre1.jpeg");
-    width: 100 px;
+    width: 40%;
     min-height: 40px;
     border-radius: 12px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+h2{
     color: lightblue;
     font-size: 50px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 h3{
@@ -176,7 +186,8 @@ h3{
 }
 .title{
     text-align: center;
-    color: lightblue;
+    color: white;
+    border-color: black;
 }
 p{
     font-size: 10px;
@@ -194,6 +205,7 @@ select{
 }
 
 .schedule{
+
     margin: auto;
     visibility: visible;
     background-image: url("./assets/images/marbre1.jpeg");
@@ -207,7 +219,22 @@ select{
 
 .schedule-form{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    padding: 3%;
     visibility: hidden; 
 }
 
+#logo{
+    border: none;
+    width:500px;
+
+}
+
+.hair-chart{
+    margin: 4%;
+    width:90%;
+}
+.auth{
+    width:100%;
+    border: 2px solid lightblue;
+}

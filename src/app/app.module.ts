@@ -14,6 +14,7 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import { NappyRoutineComponent } from './nappy-routine/nappy-routine.component';
 import { SignupComponent } from './signup/signup.component';
 import { RoutineComponent } from './routine/routine.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RoutineComponent } from './routine/routine.component';
     CurlsInfosComponent,
     WishListComponent,
     NappyRoutineComponent,
-    RoutineComponent
+    RoutineComponent,
+    ChartComponent
 
   ],
   imports: [

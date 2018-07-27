@@ -3,7 +3,7 @@
 
 <form (ngSubmit)="HairSubmission">
 
-  <label> <h2>Your hair type: </h2>
+  <label> <h3>Your hair type: </h3>
   
 <select [(ngModel)]="hairForm.hairType" name="hairType"  value="hairType" placeholder="">
 <option value="1">1</option>
@@ -17,14 +17,15 @@
 <option value="4b">4b</option>
 <option value="4c">4c</option>
 </select>
+<a routerLink="/chart" ><button>What is my hair type ?</button></a>
 </label>
-<label> <h2>Your hair length: </h2> 
+<label> <h3>Your hair length: </h3> 
  
 
 <input [(ngModel)]="hairForm.hairLength" name="hairLength" type="number" />
-<h2> cm</h2>
+<h3> cm</h3>
 </label>
-<label> <h2>Your hair volume: </h2>
+<label> <h3>Your hair volume: </h3>
    
 <select *ngIf="!input" value="{{myUserServ.currentUser.hairVolume}}"[(ngModel)]="hairForm.hairVolume" name="hairVolume" value="hairVolume" placeholder="" >
 <option value="extra thin">extra thin</option>
@@ -34,7 +35,7 @@
 <option value="extra thick">extra thick</option>
 </select>
 </label>
-<label> <h2>Your hair moisture: </h2>
+<label> <h3>Your hair moisture: </h3>
  
 <select [(ngModel)]="hairForm.hairMoisture" name="hairMoisture" type="text" value="hairMoisture" placeholder="" >
 <option value="extra dry">extra dry</option>
@@ -45,6 +46,7 @@
 </select>
 </label>
 
+<button class="login-signup" (click)="hairInfoSubmit()">SAVE</button>
 </form>
-<button (click)="hairInfoSubmit()">SAVE</button>
 </span>
+

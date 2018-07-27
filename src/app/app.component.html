@@ -1,8 +1,8 @@
 <header>
-<h1>NAPP APP</h1>
+<img id="logo" src="../assets/images/nappu.png" width="100px">
 <span *ngIf="!myUserServ.currentUser">
-  <button id="auth" > <a routerLink="signup">  SIGN UP  </a>  </button>
-  <button class="auth" > <a routerLink="/login">  LOG IN  </a> </button>
+  <button class="auth" > <a routerLink="signup">  SIGN UP  </a>  </button>
+  <button class="auth"> <a routerLink="/login">  LOG IN  </a> </button>
 </span>
 
 
@@ -19,11 +19,11 @@
     <button > <a routerLink="nappy-routine">  MY NAPPY ROUTINE  </a> </button>
     
     
-    <button (click)="logoutClick()">LOG OUT</button>
+    <button class="login-signup" (click)="logoutClick()">LOG OUT</button>
   </nav>
   
   <h2>Welcome back, {{myUserServ.currentUser.name}}!</h2>
-  <img class="profile" [src]="myUserServ.currentUser.pictureUrl" >
+  <!-- <img class="profile" [src]="myUserServ.currentUser.pictureUrl" > -->
   
 </span>
 </header>
