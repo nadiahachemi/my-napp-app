@@ -2,7 +2,7 @@
 <h1 class= "title">Here is your wish-list {{myUserServ.currentUser?.name}}</h1>
 <div class= "main-content">
 <div class= "product" *ngFor ="let oneWish of myUserServ.currentUser?.wishList">
-    <button value="oneWish" (click)="deleteProduct(oneWish)" > DELETE FROM WISHLIST </button>
+    <button class="delete" value="oneWish" (click)="deleteProduct(oneWish)" > DELETE FROM WISHLIST </button>
     <img [src]="oneWish.pictureUrl" />
     <h3>{{oneWish.name}}</h3>
     <h3>{{oneWish.brand}}</h3>
@@ -24,12 +24,12 @@
     <option value="scalp treatment">Scalp treatment</option>
     <option value="mousse">Mousse</option>
 </select>
-<button id="search-button" (click)="getProducts()">Search</button>
+<button class="delete" (click)="getProducts()">Search</button>
 
 
 <div class= "main-content">
     <div class="product" *ngFor="let oneProduct of products">
-            <button value="{{oneProduct}}" (click)="addProductToWishList(oneProduct)" >ADD TO MY WISH LIST</button>
+            <button class="delete" value="{{oneProduct}}" (click)="addProductToWishList(oneProduct)" >ADD TO MY WISH LIST</button>
 <img [src]="oneProduct.pictureUrl" />
 <h3>{{oneProduct.name}}</h3>
 <h3>{{oneProduct.brand}}</h3>
