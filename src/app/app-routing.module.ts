@@ -8,6 +8,8 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import { NappyRoutineComponent } from './nappy-routine/nappy-routine.component';
 import { SignupComponent } from './signup/signup.component';
 import { ChartComponent } from './chart/chart.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RoutineDetailsComponent } from './routine-details/routine-details.component';
 
 
 
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path:"wish-list", component: WishListComponent},
   {path: "nappy-routine", component: NappyRoutineComponent},
   {path: "chart", component: ChartComponent},
+  {path: "product/:productId", component: ProductDetailsComponent},
+  {path: "routine/:routineId", component: RoutineDetailsComponent},
   { path: "**", component: NotFoundPageComponent },
 ]
 

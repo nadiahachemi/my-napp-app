@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { UserServiceService } from "./api/user-service.service";
+import { Router } from "../../node_modules/@angular/router";
 
 @Component({
  selector: "app-root",
@@ -9,7 +10,7 @@ import { UserServiceService } from "./api/user-service.service";
 export class AppComponent {
  title = "app";
 
- constructor(public myUserServ: UserServiceService) {}
+ constructor(public myUserServ: UserServiceService, public myRouterSer: Router) {}
 
 ngOnInit(){
   this.myUserServ.check()
@@ -20,9 +21,8 @@ ngOnInit(){
 }
 logoutClick(){
   this.myUserServ.logout()
-  .catch((err)=>{
-    alert("Sorry there was a problem with your log out");
-    console.log(err);
+  .then(()=>{
+    this.myRouterSer.navigateByUrl("/nappy-routine")
   })
 }
 }

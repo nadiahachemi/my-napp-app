@@ -17,11 +17,39 @@
   <label>
     Password:
     <input [(ngModel)]="signupForm.originalPassword" name="originalPassword" type="password" placeholder="shhhhhh!">
+    <br />
+    <p class="password-infos"> Your password must contain numbers and at least one capital letter</p>
   </label>
   <br />
 
+
   
-  <button class="login-signup" >Submit</button>
+  <button class="login-signup" (click)="signupSubmit()" >Submit</button>
 </form>
 
+
+
+<!-- 
+
+<form>
+    <fieldset>
+      <legend> User info </legend>
+      <label> Name </label>
+      <input type="text" [(ngModel)]="newUser.name" name="name" required />
+  
+      <label> Email </label>
+      <input type="text" [(ngModel)]="newUser.email" name="email" required />
+  
+      <label> Password </label>
+      <input type="password" [(ngModel)]="newUser.originalPassword" name="originalPassword" required />
+  
+      <input type="file" ng2FileSelect [uploader]="uploader" name="file"  />
+  
+    </fieldset>
+    <button (click)="submit()"> submit </button>
+  </form>
+
+
+
+<p> {{ feedback }} </p> -->
 

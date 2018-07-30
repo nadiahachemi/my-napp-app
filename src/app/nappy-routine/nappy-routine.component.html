@@ -5,8 +5,7 @@
     <button (click)="deleteRoutine(oneRoutine)">Delete from my routines </button>
     <img [src]="oneRoutine.info.pictureUrl" />
     <h4>{{oneRoutine.info.name}}</h4>
-     <a [href]="oneRoutine.info.video">see tutorial</a>
- 
+     
     <h3 class="routine-when">{{oneRoutine.when}}</h3>
     <form class="schedule-form"(ngSubmit)="routineWhen(oneRoutine, whenForm[i])" >
         <select class="schedule" *ngIf="!select" value="{{oneRoutine.when}}" [(ngModel)]="whenForm[i]" name="when"> 
@@ -20,6 +19,7 @@
        </select>
        <button class="schedule-button" >schedule this routine</button>
       </form>
+
   </div>
 </div>
 
@@ -28,15 +28,10 @@
 <h1 class= "title" >Need more routines?</h1>
 <div class="main-content">
   <div class="routines" *ngFor=" let oneRoutine of routines">
+    <button value="{{oneRoutine}}" (click)="addRoutineToRoutineList(oneRoutine)" >ADD TO MY ROUTINE LIST</button>
     <img [src]="oneRoutine.pictureUrl" />
     <h3>{{oneRoutine.name}}</h3>
-    <a [href]="oneRoutine.video">see tutorial</a>
-    
-        
-
-  
-    <!-- <p>{{oneRoutine.description}}</p> -->
-    <button value="{{oneRoutine}}" (click)="addRoutineToRoutineList(oneRoutine)" >ADD TO MY ROUTINE LIST</button>
+    <button><a [routerLink]="['/routine', oneRoutine._id]">See Routine Info</a></button>
   </div>
 </div>
 </span>

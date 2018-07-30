@@ -1,0 +1,15 @@
+<h2>Routine Details</h2>
+
+<div class="main-content-prod">
+<div class="product-visuals">
+  <img [src]="routineItem?.pictureUrl" />
+  <button> <a routerLink="/nappy-routine">  BACK TO MY NAPPY ROUTINE  </a> </button>
+</div>
+<div class="product-text">
+  <h3>{{routineItem?.name}}</h3>
+  <h4>{{routineItem?.description}}</h4>
+  <button> <a [href]="routineItem?.video">see tutorial</a> </button>
+</div>
+
+
+</div>

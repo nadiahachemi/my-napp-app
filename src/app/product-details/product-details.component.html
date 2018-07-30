@@ -1,0 +1,16 @@
+<h2>Product Details</h2>
+
+<div class="main-content-prod">
+  <div class="product-visuals">
+    <img [src]="productItem?.pictureUrl" />
+  
+    <button >  <a routerLink="/wish-list"> BACK TO MY NAPPY WISH LIST </a> </button>
+  </div>  
+<div class="product-text">
+  <h3>{{productItem?.name}}</h3>
+  <h3><b>{{productItem?.brand}}</b></h3>
+  <h4>{{productItem.description}}</h4>
+</div>
+</div>
+<!-- Use ? when the object starts empty and is set later. -->
+

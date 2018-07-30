@@ -26,37 +26,11 @@ signupSubmit(){
   .then((response)=>{
     this.myRouterServ.navigateByUrl("/");
   })
-  .catch((err)=>{
-    alert('Sorry, again, we failed');
-    console.log(err);
-  })
+  // .catch((err)=>{
+  //   alert('Sorry, again, we failed');
+  //   console.log(err);
+  // })
 }
 }
 
 
-
-
-
-
-//   ngOnInit() {
-//     this.uploader.onSuccessItem = (item, response) => {
-//       this.feedback = JSON.parse(response).message;
-//     };
-
-//     this.uploader.onErrorItem = (item, response, status, headers) => {
-//       this.feedback = JSON.parse(response).message;
-//     };
-//   }
-    
-
-//   submit() {
-//     this.uploader.onBuildItemForm = (item, form) => {
-//       form.append('name', this.newUser.name);
-//       form.append('brand', this.newUser.email);
-//       form.append('originalPassword', this.newUser.originalPassword);
-
-//     };
-
-//     this.uploader.uploadAll();
-//   }
-// }

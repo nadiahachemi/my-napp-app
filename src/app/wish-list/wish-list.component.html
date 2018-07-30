@@ -4,8 +4,10 @@
 <div class= "product" *ngFor ="let oneWish of myUserServ.currentUser?.wishList">
     <button value="oneWish" (click)="deleteProduct(oneWish)" > DELETE FROM WISHLIST </button>
     <img [src]="oneWish.pictureUrl" />
+    <h3>{{oneWish.name}}</h3>
     <h3>{{oneWish.brand}}</h3>
-    <p>{{oneWish.description}}</p>
+   <button> <a [routerLink]="['/product', oneWish._id]">See Product Info</a></button>
+
 </div>
 </div>
 
@@ -31,7 +33,8 @@
 <img [src]="oneProduct.pictureUrl" />
 <h3>{{oneProduct.name}}</h3>
 <h3>{{oneProduct.brand}}</h3>
-<p>{{oneProduct.description}}</p>
+<button>  <a [routerLink]="['/product', oneProduct._id]">See Product Info</a> </button>
+ 
 </div>
  </div> 
  </span>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import{environment} from "../../environments/environment";
 import { post } from '../../../node_modules/@types/selenium-webdriver/http';
+import { FileUploader } from '../../../node_modules/ng2-file-upload';
 
 const {backendUrl}= environment;
 
@@ -18,15 +19,15 @@ export class UserServiceService {
     private myHttpServ: HttpClient
   ) { }
 
- postSignup(signupInfo: SignupSubmission){
-  return this.myHttpServ
-  .post(`${backendUrl}/api/signup`, signupInfo, {withCredentials: true})
-  .toPromise()
-  .then((response: any)=>{
-    this.currentUser = response.userDoc;
-    return response;
-  });
-}
+  postSignup(signupInfo: SignupSubmission){
+    return this.myHttpServ
+    .post(`${backendUrl}/api/signup`, signupInfo, {withCredentials: true})
+    .toPromise()
+    .then((response: any)=>{
+      this.currentUser = response.userDoc;
+      return response;
+    });
+  }
 
 postLogin(loginInfo: LoginSubmission) {
   return this.myHttpServ
@@ -159,6 +160,21 @@ routineWhen(oneRoutine: Routine, whenForm: whenForm){
     this.currentUser = response;
     return response;
   })
+}
+
+productDetails(id){
+   // return the Promise of the request (component will ".then()" & ".catch()")
+   return this.myHttpServ
+   .get(`${backendUrl}/api/product/${id}`,
+   {withCredentials: true})
+   .toPromise();
+}
+
+routineDetails(id){
+  return this.myHttpServ
+  .get(`${backendUrl}/api/routine/${id}`,
+{withCredentials: true})
+.toPromise();
 }
 
 }
