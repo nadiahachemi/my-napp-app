@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
      .postLogin(this.loginForm)
      .then(response => {
        // redirect to the homepage if it's successful
-       this.myRouterServ.navigateByUrl("/curls-infos");
+       this.myRouterServ.navigateByUrl("/");
      })
      .catch(err => {
        alert("Sorry! There was a problem with your login.");

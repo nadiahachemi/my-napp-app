@@ -1,37 +1,45 @@
-<header>
-<div id="nappy-logo">
-  <img id="logo" src="../assets/images/nappy-logo.png" alt="">
-  <img id="nappy" src="../assets/images/nappu.png" alt="">
-</div>
-<span *ngIf="!myUserServ.currentUser">
-  <button class="auth" > <a routerLink="signup">  SIGN UP  </a>  </button>
-  <button class="auth"> <a routerLink="/login">  LOG IN  </a> </button>
-</span>
-
 
 <span *ngIf="myUserServ.currentUser">
   
+    <input type="checkbox" id="navigation" />
+    <label class="label" for="navigation">
+        +
+    </label>
+  <nav id="mySidenav" class="sidenav">
+    <ul>
+      <li>
+   <a routerLink="curls-infos">  MY CURLS INFOS  </a> 
+  </li>
+    <li>
+   <a routerLink="wish-list">  MY NAPPY WISH LIST </a> 
+  </li>
+    <li>
+    <a routerLink="nappy-routine">  MY NAPPY ROUTINE  </a> 
+  </li>
+  <li>
+    <a routerLink=""> HOME </a>
+  </li>
+    <li>
+     <a (click)="logoutClick()" routerLink="/">LOG OUT</a>
+    </li>
+  </ul>
   
-  <nav>
-    <button> <a routerLink="curls-infos">  MY CURLS INFOS  </a> </button>
-    
-    
-    <button >  <a routerLink="wish-list">  MY NAPPY WISH LIST </a> </button>
-    
-    
-    <button > <a routerLink="nappy-routine">  MY NAPPY ROUTINE  </a> </button>
-    
-    
-    <button class="login-signup" (click)="logoutClick()"><a routerLink="/">LOG OUT</a></button>
-  </nav>
+</nav>
+
+</span>
+
+
+<header>
+  <img id="nappy" src="../assets/images/nappy-logo.png" alt="">
   
   <h2>Welcome back, {{myUserServ.currentUser.name}}!</h2>
   <!-- <img class="profile" [src]="myUserServ.currentUser.pictureUrl" > -->
-  
+    
+<span class="auth" *ngIf="!myUserServ.currentUser">
+  <a routerLink="signup">  SIGN UP  </a> 
+  <a routerLink="/login">  LOG IN  </a>
 </span>
+
 </header>
 
 <router-outlet></router-outlet>
-
-
-
