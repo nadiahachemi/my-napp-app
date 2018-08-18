@@ -2,8 +2,8 @@
 <span *ngIf="myUserServ.currentUser">
   
     <input type="checkbox" id="navigation" />
-    <label class="label" for="navigation">
-        +
+    <label class="label" for="navigation" >
+        <img  class="label" for="navigation" src="../assets/images/logo-logo.png" alt="">
     </label>
   <nav id="mySidenav" class="sidenav">
     <ul>
@@ -36,8 +36,20 @@
   <!-- <img class="profile" [src]="myUserServ.currentUser.pictureUrl" > -->
     
 <span class="auth" *ngIf="!myUserServ.currentUser">
+    <input type="checkbox" id="navigation" />
+    <label class="label" for="navigation" >
+        <img  class="label" for="navigation" src="../assets/images/logo-logo.png" alt="">
+    </label>
+  <nav id="mySidenav" class="sidenav">
+    <ul>
+      <li>
   <a routerLink="signup">  SIGN UP  </a> 
+  </li>
+  <li>
   <a routerLink="/login">  LOG IN  </a>
+</li>
+</ul>
+</nav>
 </span>
 
 </header>

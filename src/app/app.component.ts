@@ -22,7 +22,7 @@ ngOnInit(){
 logoutClick(){
   this.myUserServ.logout()
   .then(()=>{
-    this.myRouterSer.navigateByUrl("/nappy-routine")
+    this.myRouterSer.navigateByUrl("/")
   })
 }
 }
